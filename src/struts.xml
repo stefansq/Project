@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="higurashi.tims" extends="struts-default"> 
+	    <action name="view" class="higurashi.tims.View">
+        <result name="SUCCESS">/jsp/insts.jsp</result>
+        </action>
+        <action name="extend" class="higurashi.tims.Extend">
+        <result name="SUCCESS">/jsp/extend.jsp</result>
+        </action>
+        <action name="teacher" class="higurashi.tims.TeacherForm">
+        <result name="SUCCESS">/jsp/teacher.jsp</result>
+        </action>
+	</package>
+
+</struts>
