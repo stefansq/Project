@@ -7,13 +7,34 @@
 
     <package name="higurashi.tims" extends="struts-default"> 
 	    <action name="view" class="higurashi.tims.View">
-        <result name="SUCCESS">/jsp/insts.jsp</result>
+	    <result name="success">view.jsp</result>
         </action>
-        <action name="extend" class="higurashi.tims.Extend">
-        <result name="SUCCESS">/jsp/extend.jsp</result>
+
+        <action name="register" class="higurashi.tims.Register">
+        <result name="success">/jsp/registersuccess.jsp</result>
+        <result name="error">/jsp/registererror.jsp</result>
         </action>
+        
+        <action name="login" class="higurashi.tims.Login">
+        <result name="success">/jsp/login.jsp</result>
+        <result name="error">loginerror.jsp</result>
+        </action>
+        
         <action name="teacher" class="higurashi.tims.TeacherForm">
-        <result name="SUCCESS">/jsp/teacher.jsp</result>
+        <result name="success">/jsp/teacher.jsp</result>
+        </action>
+        
+        <action name="query" class="higurashi.tims.Query">
+	    <result name="success">/jsp/query.jsp</result>
+        </action>
+        
+        <action name="new" class="higurashi.tims.New">
+        <result name="success">/jsp/new.jsp</result>
+        </action>
+        
+        <action name="submit" class="higurashi.tims.New" method="submit">
+        <result name="success">/jsp/submit.jsp</result>
+        <result name="input" type="redirect">/new.action</result>
         </action>
 	</package>
 

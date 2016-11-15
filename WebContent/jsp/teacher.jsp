@@ -8,21 +8,33 @@
 <title></title>
 </head>
 <body>
+<center>
+姓名:
+<s:property value="teacher.name" /><br>
+性别:
+<s:if test="teacher.sex == true">男</s:if>
+<s:else>女</s:else><br>
+教职工号:
+<s:property value="teacher.id" /><br>
+单位:
+<s:property value="teacher.institute" /><br>
+邮箱:
+<s:property value="teacher.email" /><br>
+网址:
+<s:property value="teacher.web" /><br>
+基本信息:
+<s:property value="teacher.basic" /><br>
+获奖经历:
+<s:property value="teacher.awards" /><br>
+工作经历:
+<s:property value="teacher.work" /><br>
+教育经历:
+<s:property value="teacher.education" /><br>
+研究成果:
+<s:property value="teacher.research" /><br>
+其他:
+<s:property value="teacher.other" /><br>
 
-<ul>
-<li><s:property value="teacher.name" /></li>
-<li><s:property value="teacher.sex" /></li>
-<li><s:property value="teacher.id" /></li>
-<li><s:property value="teacher.birthday" /></li>
-<li><s:property value="teacher.institute" /></li>
-<li><s:property value="teacher.email" /></li>
-<li><s:property value="teacher.web" /></li>
-<li><s:property value="teacher.basic" /></li>
-<li><s:property value="teacher.awards" /></li>
-<li><s:property value="teacher.work" /></li>
-<li><s:property value="teacher.education" /></li>
-<li><s:property value="teacher.research" /></li>
-<li><s:property value="teacher.other" /></li>
-</ul>
+</center>
 </body>
 </html>

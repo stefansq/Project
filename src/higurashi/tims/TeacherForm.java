@@ -1,9 +1,7 @@
 package higurashi.tims;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -45,7 +43,7 @@ public class TeacherForm extends ActionSupport{
 		String sql = "SELECT * FROM teacher WHERE id=" + String.valueOf(tid);
 		System.out.println(sql);
         ResultSet result = db.query(sql);
-        System.out.println("result end");
+        //System.out.println("result end");
         try
         {
         	while(result.next()) {
@@ -53,16 +51,15 @@ public class TeacherForm extends ActionSupport{
             	teacher.name = result.getString(2);
             	teacher.sex = result.getBoolean(3);
             	teacher.id = result.getInt(4);
-            	teacher.birthday = result.getDate(5);
-            	teacher.institute = result.getInt(6);
-            	teacher.email = result.getString(7);
-            	teacher.web = result.getString(8);
-            	teacher.basic = result.getString(9);
-            	teacher.awards = result.getString(10);
-            	teacher.work = result.getString(11);
-            	teacher.education = result.getString(12);
-            	teacher.research = result.getString(13);
-            	teacher.other = result.getString(14);
+            	teacher.institute = result.getInt(5);
+            	teacher.email = result.getString(6);
+            	teacher.web = result.getString(7);
+            	teacher.basic = result.getString(8);
+            	teacher.awards = result.getString(9);
+            	teacher.work = result.getString(10);
+            	teacher.education = result.getString(11);
+            	teacher.research = result.getString(12);
+            	teacher.other = result.getString(13);
             }
         } catch (SQLException e)
         {
@@ -71,6 +68,6 @@ public class TeacherForm extends ActionSupport{
         result.close();
         db.close();
         
-		return "SUCCESS";
+		return SUCCESS;
 	}
 }

@@ -13,6 +13,7 @@ public class Database{
 	private static final String PASS = "269269";
 	Connection conn;
 	Statement stmt;
+	Statement stmt2;
 	
 	public Database() {
 		stmt = null;
@@ -24,7 +25,7 @@ public class Database{
 	        conn = DriverManager.getConnection(URL,USER,PASS);
 	        System.out.println("Connection Success.");
 	        stmt = conn.createStatement();
-	        
+	        stmt2 = conn.createStatement();
 	    } catch (Exception e)
 	    {
 	        e.printStackTrace();
@@ -40,13 +41,28 @@ public class Database{
             e.printStackTrace();
         }
     }
-	
+
 	public ResultSet query(String sql) {
         ResultSet result = null;
 
         try
         {
             result = stmt.executeQuery(sql);
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+	
+	public ResultSet query(String sql, boolean flag) {
+		//利用stmt2实现在保存stmt的resultset的同时进行新查询
+        ResultSet result = null;
+
+        try
+        {
+            result = stmt2.executeQuery(sql);
         } catch (SQLException e)
         {
             e.printStackTrace();
@@ -93,7 +109,6 @@ id INT NOT NULL AUTO_INCREMENT,
 name VARCHAR(40) NOT NULL,
 sex TINYINT NOT NULL,
 t_id INT,
-birthday DATE,
 institute INT,
 email VARCHAR(100),
 web VARCHAR(100),

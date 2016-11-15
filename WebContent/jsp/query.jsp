@@ -5,19 +5,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
+<title>查询</title>
 </head>
 <body>
-<ul>
-<s:iterator value="institutes" var="iname" status="st">
-<li>
-<a href=<s:url action="extend">
-<s:param name="instname" value="#st.getIndex()"></s:param>
+<center>
+关键字:
+<s:property value="name"/><br>
+<s:iterator value='teachers' id='teacher'>
+
+<a href=<s:url action='teacher' >
+<s:param name='tid' value='key'></s:param>
 </s:url>>
-<s:property value="iname" />
+<s:property value='value' />
 </a>
-</li>
+<br>
 </s:iterator>
-</ul>
+</center>
+
+
 </body>
 </html>
