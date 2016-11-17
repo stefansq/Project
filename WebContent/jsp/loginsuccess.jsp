@@ -40,7 +40,7 @@ function returnUrlByTime()
 <b><span id="layer">5</span>秒后，转入输入界面。</b>
 <%
 //转向语句
-response.setHeader("Refresh", "5;URL=login.jsp");
+response.setHeader("Refresh", "5;URL=index.jsp");
 %>
 </div>
 </body>
